@@ -71,11 +71,11 @@ export function SiteHeader() {
             <a href="#top" className="font-petrona text-2xl font-semibold tracking-[-0.04em]">Roofix</a>
           </div>
           <Button
-            type="button"
+            asChild
             variant="ghost"
             className="h-auto rounded-full bg-[#ff5b2a] px-4 py-2.5 text-xs font-semibold text-white hover:bg-[#e94c22] hover:text-white md:hidden"
           >
-            Get a Quote
+            <a href="#quote">Get a Quote</a>
           </Button>
         </div>
         <nav aria-label="Main navigation" className="hidden flex-col gap-2 rounded-2xl bg-[#293247] p-4 text-sm text-white shadow-xl md:static md:flex md:flex-none md:flex-row md:items-center md:justify-center md:gap-1 md:rounded-full md:bg-[#E7EEF5] md:px-6 md:py-3 md:shadow-none">
@@ -97,15 +97,15 @@ export function SiteHeader() {
           ))}
         </nav>
         <Button
-          type="button"
+          asChild
           variant="ghost"
           className="group relative hidden h-auto shrink-0 overflow-hidden rounded-full bg-[#292f42] border-[#292f42] border px-5 py-3 text-xs font-semibold text-white transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 md:inline-flex md:items-center"
         >
-          <span className="absolute right-2 top-1/2 z-0 size-7 -translate-y-1/2 rounded-full bg-white transition-transform duration-500 ease-out group-hover:scale-[6] group-focus-visible:scale-[6]" />
-          <span className="relative z-10 pr-8 transition-colors group-hover:text-[#292f42] group-focus-visible:text-[#292f42]">Get a Free Quote</span>
-          <span className="absolute right-2 top-1/2 z-10 flex size-7 -translate-y-1/2 items-center justify-center rounded-full bg-[#FF6525] text-white transition-transform duration-300 group-hover:rotate-45 group-focus-visible:rotate-45">
-            <ArrowUpRight size={14} />
-          </span>
+          <a href="#quote" className="relative inline-flex items-center">
+            <span className="absolute right-2 top-1/2 z-0 size-7 -translate-y-1/2 rounded-full bg-white transition-transform duration-500 ease-out group-hover:scale-[6] group-focus-visible:scale-[6]" />
+            <span className="relative z-10 pr-8 transition-colors group-hover:text-[#292f42] group-focus-visible:text-[#292f42]">Get a Free Quote</span>
+            <span className="absolute right-2 top-1/2 z-10 flex size-7 -translate-y-1/2 items-center justify-center rounded-full bg-[#FF6525] text-white transition-transform duration-300 group-hover:rotate-45 group-focus-visible:rotate-45"><ArrowUpRight size={14} /></span>
+          </a>
         </Button>
       </div>
     </header>

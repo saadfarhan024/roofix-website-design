@@ -14,10 +14,10 @@ export function SiteFooter() {
     <footer className="bg-[#293247] px-5 py-20 text-white lg:px-10">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Let&apos;s Build Your<span className="text-[#ff5b2a]"> Perfect</span> Fence</h2>
+          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Let&apos;s Build Your<span className="text-[#ff5b2a]"> Perfect</span> Roof</h2>
           <div>
             <p className="text-sm leading-6 text-white/60">Booking your appointment is quick and easy — choose your preferred time, and we’ll take care of the rest.</p>
-            <div className="mt-5"><ActionButton animated>Contact us</ActionButton></div>
+            <div className="mt-5"><ActionButton href="#quote" animated>Contact us</ActionButton></div>
           </div>
         </div>
         <div className="mt-20 border-t border-white/15 pt-8">

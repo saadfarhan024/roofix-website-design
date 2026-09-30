@@ -46,7 +46,7 @@ export function WhyChooseUs() {
           <p className="mt-6 max-w-md text-sm leading-7 text-[#687386]">
             We deliver dependable roofing solutions backed by years of experience, honest communication, and a commitment to homeowners like you.
           </p>
-          <div className="mt-7"><ActionButton dark>Get a free quote</ActionButton></div>
+          <div className="mt-7"><ActionButton href="#quote" dark>Get a free quote</ActionButton></div>
         </div>
         <div className="grid gap-3 sm:grid-cols-2">
           {benefits.map(([number, title, copy]) => (
