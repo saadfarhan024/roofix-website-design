@@ -23,3 +23,4 @@ button { cursor: pointer; }
 .section-title { max-width: 520px; font-size: clamp(2.35rem, 5vw, 4.25rem); line-height: .98; letter-spacing: -.065em; font-weight: 800; }
 .section-title span { color: #ff5b2a; }
 .font-serif { font-family: Georgia, 'Times New Roman', serif; }
+@media (max-width: 700px) { .section-title { font-size: 2rem; } .eyebrow { font-size: .55rem; } }
