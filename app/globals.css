@@ -136,6 +136,26 @@ button {
   color: #ff5b2a;
 }
 
+.section-copy {
+  max-width: 32rem;
+  color: #687386;
+  font-size: .875rem;
+  line-height: 1.7;
+}
+
+.section-pad {
+  padding-block: clamp(4.5rem, 8vw, 8rem);
+}
+
+.surface-blue {
+  background: #eaf3f8;
+}
+
+.surface-navy {
+  background: #293247;
+  color: white;
+}
+
 .font-serif {
   font-family: Georgia, 'Times New Roman', serif;
 }

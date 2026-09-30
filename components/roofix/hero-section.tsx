@@ -35,25 +35,19 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-        <Card className="relative z-10 mt-7 w-full gap-3 rounded-2xl border-0 bg-white py-4 text-[#293247] shadow-2xl max-md:mb-[-2rem] sm:mt-8 sm:max-w-md sm:py-5 md:mt-0 md:w-72 md:max-w-none lg:absolute lg:bottom-9 lg:right-10 lg:w-80">
+        <Card id="quote" className="relative z-10 mt-7 w-full gap-3 rounded-2xl border-0 bg-white py-4 text-[#293247] shadow-2xl max-md:mb-[-2rem] sm:mt-8 sm:max-w-md sm:py-5 md:mt-0 md:w-72 md:max-w-none lg:absolute lg:bottom-9 lg:right-10 lg:w-80">
           <CardHeader className="text-center"><CardTitle className="text-sm">Get Your Free Roofing <br /> Quote Today !</CardTitle></CardHeader>
           <CardContent>
             <form className="flex flex-col gap-2" action="#top">
-              <Input aria-label="Name" placeholder="Full name" className="h-9 text-xs" />
-              {/* email */}
-              <div className="grid max-md:grid-cols-2 max-sm:grid-cols-1 gap-2">
-                <Input aria-label="Email" placeholder="Email address" type="email" className="h-9 text-xs" />
-              <Input aria-label="Phone number" placeholder="Phone number" type="tel" className="h-9 text-xs" />
-              {/* type of service - select input */}
-              <select aria-label="Service type" defaultValue="" className="h-9 min-w-0 rounded-md bg-[#f0f0f0] border border-input px-2 text-xs text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring/40"><option value="" disabled>Type of service</option><option>Roof repair</option><option>Roof replacement</option><option>Roof inspection</option></select>
-
-{/* zip code */}
-              <Input aria-label="Zip code" placeholder="Zip code" type="text" className="h-9 text-xs" />
-              {/* address */}
+              <Input aria-label="Name" placeholder="Full name" className="h-9 border-0 bg-[#f4f6f7] text-xs" />
+              <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
+                <Input aria-label="Email" placeholder="Email address" type="email" className="h-9 border-0 bg-[#f4f6f7] text-xs" />
+                <Input aria-label="Phone number" placeholder="Phone number" type="tel" className="h-9 border-0 bg-[#f4f6f7] text-xs" />
+                <select aria-label="Service type" defaultValue="" className="h-9 min-w-0 rounded-md border-0 bg-[#f4f6f7] px-2 text-xs text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring/40"><option value="" disabled>Type of service</option><option>Roof repair</option><option>Roof replacement</option><option>Roof inspection</option></select>
+                <Input aria-label="Zip code" placeholder="Zip code" type="text" className="h-9 border-0 bg-[#f4f6f7] text-xs" />
               </div>
-              <Input aria-label="Address" placeholder="Address" type="text" className="h-9 text-xs" />
-              {/* message text area */}
-              <textarea aria-label="Message" placeholder="Message" className="h-20 resize-none rounded-md border border-input bg-[#F0F0F0] p-2 text-xs text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring/40" />
+              <Input aria-label="Address" placeholder="Address" type="text" className="h-9 border-0 bg-[#f4f6f7] text-xs" />
+              <textarea aria-label="Message" placeholder="Tell us about your project" className="h-20 resize-none rounded-md border-0 bg-[#f4f6f7] p-2 text-xs text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring/40" />
               <Button type="submit" className="col-span-2 h-10 rounded-full bg-[#ff5b2a] text-xs font-bold text-white hover:bg-[#e94c22]">Get free quote</Button>
             </form>
           </CardContent>
