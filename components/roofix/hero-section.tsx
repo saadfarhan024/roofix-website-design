@@ -1,4 +1,7 @@
-import { Star } from 'lucide-react'
+'use client'
+
+import { useState } from 'react'
+import { Star, CheckCircle2, ArrowUpRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -6,6 +9,8 @@ import { ActionButton } from './action-button'
 import { heroImage } from './data'
 
 export function HeroSection() {
+  const [submitted, setSubmitted] = useState(false)
+
   return (
     <section id="top" className="relative mx-auto min-h-155 max-w-360 overflow-hidden rounded-[24px] bg-[#507e93] max-md:overflow-visible sm:rounded-[28px]">
       <img src={heroImage} alt="Roofing professional working on a tile roof" className="absolute inset-0 size-full object-cover object-[62%_center] brightness-[.72]" />
@@ -38,7 +43,7 @@ export function HeroSection() {
         <Card id="quote" className="relative z-10 mt-7 w-full gap-3 rounded-2xl border-0 bg-white py-4 text-[#293247] shadow-2xl max-md:mb-[-2rem] sm:mt-8 sm:max-w-md sm:py-5 md:mt-0 md:w-72 md:max-w-none lg:absolute lg:bottom-9 lg:right-10 lg:w-80">
           <CardHeader className="text-center"><CardTitle className="text-sm">Get Your Free Roofing <br /> Quote Today !</CardTitle></CardHeader>
           <CardContent>
-            <form className="flex flex-col gap-2" action="#top">
+            {submitted ? <div className="flex min-h-64 flex-col items-center justify-center text-center"><CheckCircle2 className="size-12 text-[#ff5b2a]" /><h3 className="mt-4 text-lg font-bold">Request received</h3><p className="mt-2 max-w-xs text-xs leading-5 text-[#687386]">Thanks — a Roofix expert will contact you shortly to discuss your project.</p><button type="button" onClick={() => setSubmitted(false)} className="mt-5 text-xs font-bold text-[#ff5b2a] underline underline-offset-4">Send another request</button></div> : <form className="flex flex-col gap-2" onSubmit={(event) => { event.preventDefault(); setSubmitted(true) }}>
               <Input aria-label="Name" placeholder="Full name" className="h-9 border-0 bg-[#f4f6f7] text-xs" />
               <div className="grid grid-cols-2 gap-2 max-sm:grid-cols-1">
                 <Input aria-label="Email" placeholder="Email address" type="email" className="h-9 border-0 bg-[#f4f6f7] text-xs" />
@@ -49,7 +54,7 @@ export function HeroSection() {
               <Input aria-label="Address" placeholder="Address" type="text" className="h-9 border-0 bg-[#f4f6f7] text-xs" />
               <textarea aria-label="Message" placeholder="Tell us about your project" className="h-20 resize-none rounded-md border-0 bg-[#f4f6f7] p-2 text-xs text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring/40" />
               <Button type="submit" className="col-span-2 h-10 rounded-full bg-[#ff5b2a] text-xs font-bold text-white hover:bg-[#e94c22]">Get free quote</Button>
-            </form>
+            </form>}
           </CardContent>
         </Card>
       </div>
