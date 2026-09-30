@@ -21,7 +21,7 @@ export function HeroSection() {
             Reliable Roofing Solutions
           </h1>
           <div className="mt-6 flex flex-col items-start gap-4 sm:mt-8 lg:flex-row lg:items-center max-md:justify-center max-md:items-center">
-            <ActionButton animated className="order-2 lg:order-1">Contact Us</ActionButton>
+            <ActionButton href="#quote" animated className="order-2 lg:order-1">Contact Us</ActionButton>
             <div role="group" aria-label="Rated 5 out of 5 by over 2,000 users" className="order-1 inline-flex max-w-full items-center gap-3 rounded-full border border-white/20 bg-[#101a22]/75 px-3 py-2 shadow-lg backdrop-blur-sm lg:order-2">
               <div aria-hidden="true" className="flex shrink-0 items-center -space-x-2.5">
                 <img src="https://roofix-phi.vercel.app/_astro/trustpilot.AGkwSabt.avif" alt="" className="size-10 rounded-full border-2 border-white object-cover" />

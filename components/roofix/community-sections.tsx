@@ -39,7 +39,7 @@ export function LocationsSection() {
           <p className="eyebrow">Locations</p>
           <h2 className="section-title mt-5">Our service <span>locations</span></h2>
           <p className="mt-6 max-w-sm text-sm leading-7 text-[#687386]">We provide professional roofing services across multiple locations, bringing quality and care closer to home.</p>
-          <ActionButton dark>Get a free quote</ActionButton>
+          <ActionButton href="#quote" dark>Get a free quote</ActionButton>
         </div>
         <div className="grid grid-cols-2 gap-x-6 lg:gap-x-8 xl:grid-cols-3">
           {locations.map((location) => (

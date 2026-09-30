@@ -10,6 +10,7 @@ type ActionButtonProps = {
   dark?: boolean
   animated?: boolean
   className?: string
+  href?: string
 }
 
 function trackPointer(event: ReactPointerEvent<HTMLButtonElement>) {
@@ -18,11 +19,12 @@ function trackPointer(event: ReactPointerEvent<HTMLButtonElement>) {
   event.currentTarget.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`)
 }
 
-export function ActionButton({ children, dark = false, animated = false, className }: ActionButtonProps) {
+export function ActionButton({ children, dark = false, animated = false, className, href }: ActionButtonProps) {
   return (
     <Button
       type="button"
       variant="ghost"
+      onClick={href ? () => { window.location.hash = href.replace('#', '') } : undefined}
       className={cn(
         'group relative isolate inline-flex h-16 min-w-48 items-center justify-between gap-4 overflow-hidden rounded-full border border-[#ff5b2a] px-3 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-[#ff5b2a]/60',
         dark ? 'bg-[#293247] text-white hover:bg-[#1f283a] hover:text-white' : 'bg-white text-[#293247] hover:bg-[#f2f5f8] hover:text-[#293247]',
