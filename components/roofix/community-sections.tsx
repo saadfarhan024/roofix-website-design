@@ -30,7 +30,7 @@ export function LocationsSection() {
           <p className="eyebrow">Where we work</p>
           <h2 className="section-title mt-4">Ten cities, one standard</h2>
           <p className="mt-5 max-w-sm text-base leading-7 text-muted-foreground">Crews based near you, so call-outs are quick and follow-up visits are easy.</p>
-          <div className="mt-8"><ActionButton dark animated>Get a free quote</ActionButton></div>
+          <div className="mt-8"><ActionButton href="#quote" dark animated>Get a free quote</ActionButton></div>
         </div>
         <ul className="grid grid-cols-2 gap-x-8 xl:grid-cols-3">
           {locations.map((city) => (

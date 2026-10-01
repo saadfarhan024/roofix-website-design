@@ -10,7 +10,7 @@ export function SiteFooter() {
           <h2 className="max-w-2xl font-heading text-4xl font-bold leading-tight tracking-tight sm:text-5xl">Fix your roof before the next storm.</h2>
           <div className="max-w-sm">
             <p className="text-base leading-7 text-white/70">Pick a time that suits you and we&apos;ll confirm within one working day.</p>
-            <div className="mt-5"><ActionButton animated>Book a free inspection</ActionButton></div>
+            <div className="mt-5"><ActionButton href="#quote" animated>Book a free inspection</ActionButton></div>
           </div>
         </div>
         <div className="mt-20 border-t border-white/15 pt-8">

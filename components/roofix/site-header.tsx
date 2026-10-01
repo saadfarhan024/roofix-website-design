@@ -38,7 +38,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a href="#top" className={quote}>Get a free quote</a>
+          <a href="#quote" className={quote}>Get a free quote</a>
           <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger aria-label="Open menu" className="inline-flex size-10 items-center justify-center rounded-full hover:bg-rain md:hidden">
               <Menu />

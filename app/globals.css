@@ -89,6 +89,10 @@ button { cursor: pointer; }
   text-decoration-thickness: .08em; text-underline-offset: .14em;
 }
 
+.section-copy { max-width: 32rem; color: var(--muted-foreground); font-size: .875rem; line-height: 1.7; }
+.surface-navy { background: var(--color-ink); color: white; }
+
+
 .footer-wordmark {
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%);

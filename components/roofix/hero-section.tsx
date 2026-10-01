@@ -25,7 +25,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        <form action="#top" className="rise rounded-2xl bg-white p-5 text-ink shadow-2xl [animation-delay:.35s] sm:p-6">
+        <form id="quote" action="#quote" className="rise rounded-2xl bg-white p-5 text-ink shadow-2xl [animation-delay:.35s] sm:p-6">
           <h2 className="font-heading text-xl font-bold leading-tight">Get your free roofing quote</h2>
           <p className="mt-1 text-sm text-muted-foreground">We reply within one working day.</p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">

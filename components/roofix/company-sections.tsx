@@ -44,7 +44,7 @@ export function WhyChooseUs() {
           <p className="eyebrow">Why Roofix</p>
           <h2 className="section-title mt-4">Clear quotes, careful work, a guarantee in writing</h2>
           <p className="mt-5 max-w-md text-base leading-7 text-muted-foreground">Most roofing complaints come from surprises. We remove them before the first tile is lifted.</p>
-          <div className="mt-8"><ActionButton animated dark>Get a free quote</ActionButton></div>
+          <div className="mt-8"><ActionButton href="#quote" animated dark>Get a free quote</ActionButton></div>
         </div>
         <ul className="divide-y divide-border border-y border-border">
           {benefits.map(([, title, copy], i) => {

@@ -10,6 +10,7 @@ type ActionButtonProps = {
   dark?: boolean
   animated?: boolean
   className?: string
+  href?: string
 }
 
 // Light and dark are exact opposites. Orange is not part of either.
@@ -36,13 +37,14 @@ function trackPointer(event: ReactPointerEvent<HTMLButtonElement>) {
   event.currentTarget.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`)
 }
 
-export function ActionButton({ children, dark = false, animated = false, className }: ActionButtonProps) {
+export function ActionButton({ children, dark = false, animated = false, className, href }: ActionButtonProps) {
   const s = dark ? scheme.dark : scheme.light
 
   return (
     <Button
       type="button"
       variant="ghost"
+      onClick={href ? () => { window.location.hash = href.replace("#", "") } : undefined}
       className={cn(
         'group relative isolate inline-flex h-16 min-w-48 items-center justify-between gap-4 overflow-hidden rounded-full border border-signal px-3 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5 focus-visible:ring-2 focus-visible:ring-signal/60',
         s.base,
