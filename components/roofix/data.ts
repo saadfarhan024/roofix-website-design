@@ -5,7 +5,7 @@ export const crewImage = 'https://roofix-phi.vercel.app/_astro/team-tablet.BWIIA
 export const processImages = [
   'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=85',
   'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=700&q=85',
-  'https://images.unsplash.com/photo-1590644365607-1c5a8c0f4a8d?auto=format&fit=crop&w=700&q=85',
+  'https://roofix-phi.vercel.app/_astro/process3.VN03ob8U_1X7tyL.webp',
   'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=85',
 ] as const
 
@@ -35,7 +35,7 @@ export const team = [
 ] as const
 
 export const projectCards = [
-  ['Storm damage repair', 'https://images.unsplash.com/photo-1635424710928-2c3a96f34e56?auto=format&fit=crop&w=700&q=85'],
+  ['Storm damage repair', 'https://roofix-phi.vercel.app/_astro/serviceone.Dwz8XhOq_aCqEW.webp'],
   ['Roof replacement', 'https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=700&q=85'],
   ['Gutter & drainage', 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=85'],
   ['Commercial upgrade', 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=85'],

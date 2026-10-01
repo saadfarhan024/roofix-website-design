@@ -1,67 +1,62 @@
-import { ShieldCheck } from 'lucide-react'
+import { BadgeCheck, MapPinned, ReceiptText, ShieldCheck } from 'lucide-react'
 import { ActionButton } from './action-button'
-import { Badge } from '@/components/ui/badge'
-import { Card, CardContent } from '@/components/ui/card'
 import { benefits, crewImage, team } from './data'
+import { CountUp } from './count-up'
 
+const icons = [BadgeCheck, ShieldCheck, ReceiptText, MapPinned]
+
+const stats = [
+  { to: 20, suffix: '+', label: 'years on Dhaka roofs' },
+  { to: 3000, suffix: '+', label: 'projects completed' },
+  { to: 99, suffix: '%', label: 'customer satisfaction' },
+  { text: '24/7', label: 'emergency call-outs' },
+] as const
 export function TrustStats() {
   return (
-    <section className="mx-auto max-w-315 px-5 lg:py-space-fluid-2xl">
-      <div className="grid gap-3 pt-7 sm:grid-cols-[1fr_.8fr] sm:items-end sm:pt-9">
+    <section id="about" data-reveal className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-28">
+      <div className="grid gap-8 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
         <div>
-          <p className="eyebrow">ABOUT US</p>
-        <h2 className="max-w-lg text-2xl font-extrabold leading-tight tracking-[-.055em] sm:text-4xl">Your trusted roofing company in <span className="text-[#ff5b2a]">Dhaka</span></h2>
+          <p className="eyebrow">About us</p>
+          <h2 className="section-title mt-4">Dhaka&apos;s local roofing crew</h2>
         </div>
-        <p className="max-w-md text-xs leading-5 text-[#687386] sm:justify-self-end sm:text-sm sm:leading-6">Local roofing specialists focused on durable materials, honest advice, and work that stands up to the weather.</p>
+        <p className="max-w-md text-base leading-7 text-muted-foreground">We use durable materials, give honest advice, and build roofs that hold up through monsoon season and summer heat.</p>
       </div>
-      <div className="mt-5 grid grid-cols-2 gap-2 sm:mt-6 sm:grid-cols-4">
-        <Stat value="20+" label="Years experience" />
-        <Stat value="99%" label="Customer satisfaction" />
-        <Stat value="3K+" label="Projects completed" />
-        <Stat value="24/7" label="Emergency support" />
-      </div>
-      <img src={crewImage} alt="Roofix team working together" className="mt-4 h-48 w-full rounded-2xl object-cover object-center sm:mt-6 sm:h-80 xl:h-96" />
+      <dl className="mt-10 grid grid-cols-2 border-y border-border lg:grid-cols-4">
+        {stats.map((stat) => (
+          <div key={stat.label} className="border-b border-border px-3 py-6 first:pl-0 lg:border-b-0 lg:border-r lg:py-8 lg:last:border-r-0">
+            <dt className="text-sm text-muted-foreground">{stat.label}</dt>
+            <dd className="mt-1 font-heading text-4xl font-bold tracking-tight tabular-nums">
+              {'to' in stat ? <CountUp to={stat.to} suffix={stat.suffix} /> : stat.text}
+            </dd>
+          </div>
+        ))}
+      </dl>
+      <img src={crewImage} alt="The Roofix crew on site" className="mt-8 h-64 w-full rounded-3xl object-cover sm:h-96" />
     </section>
-  )
-}
-
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <Card className="items-center justify-center gap-1 rounded-2xl border-0 bg-[#eaf3f8] py-6 text-center shadow-none">
-      <CardContent className="px-3">
-        <strong className="text-3xl tracking-[-.06em] font-petrona">{value}</strong>
-        <p className="mt-1 text-[10px] uppercase tracking-wider text-[#7b8491]">{label}</p>
-      </CardContent>
-    </Card>
   )
 }
 
 export function WhyChooseUs() {
   return (
-    <section id="why" className="mx-auto max-w-7xl px-5 py-16 sm:py-24 lg:px-10 lg:py-32">
-      <div className="grid gap-9 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-14">
-        <div>
-          <p className="eyebrow">Why choose us</p>
-          <h2 className="section-title mt-5">Why we&apos;re the <span>right choice</span></h2>
-          <p className="mt-6 max-w-md text-sm leading-7 text-[#687386]">
-            We deliver dependable roofing solutions backed by years of experience, honest communication, and a commitment to homeowners like you.
-          </p>
-          <div className="mt-7"><ActionButton dark>Get a free quote</ActionButton></div>
+    <section id="why" data-reveal className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-28">
+      <div className="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-16">
+        <div className="lg:sticky lg:top-24 lg:self-start">
+          <p className="eyebrow">Why Roofix</p>
+          <h2 className="section-title mt-4">Clear quotes, careful work, a guarantee in writing</h2>
+          <p className="mt-5 max-w-md text-base leading-7 text-muted-foreground">Most roofing complaints come from surprises. We remove them before the first tile is lifted.</p>
+          <div className="mt-8"><ActionButton animated dark>Get a free quote</ActionButton></div>
         </div>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {benefits.map(([number, title, copy]) => (
-            <Card key={number} className="rounded-2xl border-[#e6ebf0] bg-white py-5 shadow-sm">
-              <CardContent>
-                <div className="mb-5 flex items-center justify-between">
-                  <span className="flex size-10 items-center justify-center rounded-full bg-[#fff0eb] text-[#ff5b2a]"><ShieldCheck size={19} /></span>
-                  <Badge variant="accent">{number}</Badge>
-                </div>
-                <h3 className="text-lg font-bold">{title}</h3>
-                <p className="mt-2 text-xs leading-5 text-[#7b8491]">{copy}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <ul className="divide-y divide-border border-y border-border">
+          {benefits.map(([, title, copy], i) => {
+            const Icon = icons[i]
+            return (
+              <li key={title} className="flex gap-5 py-7">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground"><Icon size={22} /></span>
+                <div><h3 className="font-heading text-xl font-bold">{title}</h3><p className="mt-1.5 max-w-md text-sm leading-6 text-muted-foreground">{copy}</p></div>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     </section>
   )
@@ -69,22 +64,18 @@ export function WhyChooseUs() {
 
 export function TeamSection() {
   return (
-    <section className="bg-[#293247] px-5 py-24 text-white lg:rounded-[28px] lg:px-10">
-      <div className="mx-auto max-w-7xl text-center">
-        <p className="eyebrow text-white/70">Our team</p>
-        <h2 className="section-title mx-auto mt-5 max-w-xl text-white">Meet our <span>experts</span></h2>
-        <p className="mx-auto mt-5 max-w-md text-sm leading-6 text-white/60">
-          A dedicated team of skilled professionals committed to quality, reliability, and care on every project.
-        </p>
-        <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4">
+    <section data-reveal className="mx-5 rounded-3xl bg-ink px-5 py-20 text-white lg:mx-auto lg:max-w-[112rem] lg:px-10">
+      <div className="mx-auto max-w-7xl">
+        <h2 className="section-title max-w-xl">The people on your roof</h2>
+        <p className="mt-4 max-w-md text-base leading-7 text-white/70">Every project has a named manager, a site supervisor and a safety lead.</p>
+        <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
           {team.map(([name, role, image]) => (
-            <Card key={name} className="gap-0 overflow-hidden rounded-2xl border-0 bg-white py-0 text-center text-[#293247] shadow-none">
-              <img src={image} alt={`${name}, ${role}`} className="aspect-[.88] w-full object-cover" />
-              <CardContent className="p-3"><h3 className="text-sm font-bold">{name}</h3><p className="mt-1 text-[10px] text-[#87909d]">{role}</p></CardContent>
-            </Card>
+            <figure key={name}>
+              <img src={image} alt={`${name}, ${role}`} className="aspect-4/5 w-full rounded-2xl object-cover" />
+              <figcaption className="mt-3"><p className="font-semibold">{name}</p><p className="text-sm text-white/70">{role}</p></figcaption>
+            </figure>
           ))}
         </div>
-        <div className="mt-10"><ActionButton>View everyone</ActionButton></div>
       </div>
     </section>
   )

@@ -4,11 +4,13 @@ import { TrustStats, WhyChooseUs, TeamSection } from './roofix/company-sections'
 import { ProjectsSection, ProcessSection, ServicesSection, JournalSection } from './roofix/service-sections'
 import { ReviewsSection, LocationsSection } from './roofix/community-sections'
 import { SiteFooter } from './roofix/site-footer'
+import { SectionReveals } from './roofix/section-reveals'
 
 export default function RoofixPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#fbfcfd] text-[#293247]">
+    <main className="min-h-screen overflow-x-clip bg-background text-ink">
       <SiteHeader />
+      <SectionReveals />
       <HeroSection />
       <TrustStats />
       <ServicesSection />

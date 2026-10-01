@@ -1,51 +1,24 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
-import { Geist, Petrona } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { Geist, Bricolage_Grotesque } from 'next/font/google'
+import { cn } from '@/lib/utils'
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-const petrona = Petrona({subsets:['latin'],variable:'--font-petrona',weight:['400','500','600','700']});
+const body = Geist({ subsets: ['latin'], variable: '--font-body' })
+const display = Bricolage_Grotesque({ subsets: ['latin'], variable: '--font-display', weight: ['500', '600', '700', '800'] })
 
 export const metadata: Metadata = {
-  title: 'Roofix | Reliable Roofing Solutions',
-  description: 'Dependable roofing installation, repair, and replacement from trusted local experts.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
+  title: 'Roofix | Roofing built for the monsoon',
+  description: 'Roof installation, repair and replacement in Dhaka and across Bangladesh, with clear quotes and a written guarantee.',
+  icons: { icon: '/icon.svg', apple: '/apple-icon.png' },
 }
 
-export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
-}
+export const viewport: Viewport = { themeColor: '#14232b' }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable, petrona.variable)}>
-      <body className="antialiased">
+    <html lang="en" className={cn(body.variable, display.variable)}>
+      <body>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

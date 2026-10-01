@@ -1,63 +1,49 @@
-import { Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { ActionButton } from './action-button'
 import { heroImage } from './data'
 
+const field = 'h-11 rounded-lg border-input bg-white text-sm'
+
 export function HeroSection() {
   return (
-    <section id="top" className="relative mx-auto min-h-155 max-w-360 overflow-hidden rounded-[24px] bg-[#507e93] max-md:overflow-visible sm:rounded-[28px]">
-      <img src={heroImage} alt="Roofing professional working on a tile roof" className="absolute inset-0 size-full object-cover object-[62%_center] brightness-[.72]" />
-      <div className="absolute inset-0 bg-linear-to-r from-[#172331]/75 via-[#172331]/25 to-transparent" />
-      <div className="relative mx-auto flex min-h-155 max-w-7xl flex-col items-center justify-end px-5 pb-6 pt-28 sm:px-8 sm:pb-10 md:flex-row md:items-center md:justify-between md:px-8 md:py-16 lg:min-h-155 lg:items-end lg:px-10 lg:pb-24 lg:pt-28">
-        <div className="max-w-xl text-white md:max-w-[52%] flex flex-col max-md:items-center max-md:justify-center">
-          <h1 className="mt-5 text-[clamp(2.8rem,10vw,5rem)] leading-[.94] tracking-[-.065em] sm:text-7xl lg:text-8xl font-petrona max-md:text-center">
-            Reliable Roofing Solutions
+    <section id="top" className="relative mx-auto max-w-[120rem] overflow-hidden rounded-3xl bg-ink">
+      <img src={heroImage} alt="Roofer fitting tiles on a pitched roof" className="absolute inset-0 size-full object-cover object-[62%_center] opacity-70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/50 to-transparent" />
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-5 pb-10 pt-28 sm:px-8 lg:min-h-[44rem] lg:grid-cols-[1.15fr_.85fr] lg:items-end lg:px-10 lg:pb-16">
+        <div className="text-white">
+          <p className="rise mb-5 text-sm font-medium text-white/80">Roofing across Dhaka and Bangladesh</p>
+          <h1 className="rise font-heading text-5xl font-bold leading-[.98] tracking-[-.04em] [animation-delay:.1s] sm:text-6xl lg:text-7xl xl:text-8xl">
+            A roof that outlasts the monsoon.
           </h1>
-          <div className="mt-6 flex flex-col items-start gap-4 sm:mt-8 lg:flex-row lg:items-center max-md:justify-center max-md:items-center">
-            <ActionButton animated className="order-2 lg:order-1">Contact Us</ActionButton>
-            <div role="group" aria-label="Rated 5 out of 5 by over 2,000 users" className="order-1 inline-flex max-w-full items-center gap-3 rounded-full border border-white/20 bg-[#101a22]/75 px-3 py-2 shadow-lg backdrop-blur-sm lg:order-2">
-              <div aria-hidden="true" className="flex shrink-0 items-center -space-x-2.5">
-                <img src="https://roofix-phi.vercel.app/_astro/trustpilot.AGkwSabt.avif" alt="" className="size-10 rounded-full border-2 border-white object-cover" />
-                <img src="https://roofix-phi.vercel.app/_astro/facebook.Dz7CUScg.avif" alt="" className="size-10 rounded-full border-2 border-white object-cover" />
-                <img src="https://roofix-phi.vercel.app/_astro/googel.B8B-XQ10.avif" alt="" className="size-10 rounded-full border-2 border-white object-cover" />
-              </div>
-              <div className="min-w-0">
-                <div className="flex items-center gap-2 whitespace-nowrap">
-                  <span aria-hidden="true" className="flex gap-0.5 text-[#ffbf00]">
-                    {Array.from({ length: 5 }, (_, index) => <Star key={index} size={14} fill="currentColor" strokeWidth={1.5} />)}
-                  </span>
-                  <span className="text-lg font-bold leading-none text-white">5.0</span>
-                </div>
-                <p className="mt-1 whitespace-nowrap text-xs text-white/75">2K+ User Review</p>
-              </div>
-            </div>
+          <p className="rise mt-6 max-w-lg text-base leading-7 text-white/80 [animation-delay:.2s]">
+            Installation, repair and replacement by a local crew. You get a written quote, a fixed schedule and a guarantee in writing.
+          </p>
+          <div className="rise mt-8 flex flex-wrap items-center gap-4 [animation-delay:.3s]">
+            <ActionButton animated>Book a free inspection</ActionButton>
+            <p className="text-sm text-white/80"><strong className="text-white">5.0</strong> from 2,000+ reviews</p>
           </div>
         </div>
-        <Card className="relative z-10 mt-7 w-full gap-3 rounded-2xl border-0 bg-white py-4 text-[#293247] shadow-2xl max-md:mb-[-2rem] sm:mt-8 sm:max-w-md sm:py-5 md:mt-0 md:w-72 md:max-w-none lg:absolute lg:bottom-9 lg:right-10 lg:w-80">
-          <CardHeader className="text-center"><CardTitle className="text-sm">Get Your Free Roofing <br /> Quote Today !</CardTitle></CardHeader>
-          <CardContent>
-            <form className="flex flex-col gap-2" action="#top">
-              <Input aria-label="Name" placeholder="Full name" className="h-9 text-xs" />
-              {/* email */}
-              <div className="grid max-md:grid-cols-2 max-sm:grid-cols-1 gap-2">
-                <Input aria-label="Email" placeholder="Email address" type="email" className="h-9 text-xs" />
-              <Input aria-label="Phone number" placeholder="Phone number" type="tel" className="h-9 text-xs" />
-              {/* type of service - select input */}
-              <select aria-label="Service type" defaultValue="" className="h-9 min-w-0 rounded-md bg-[#f0f0f0] border border-input px-2 text-xs text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring/40"><option value="" disabled>Type of service</option><option>Roof repair</option><option>Roof replacement</option><option>Roof inspection</option></select>
 
-{/* zip code */}
-              <Input aria-label="Zip code" placeholder="Zip code" type="text" className="h-9 text-xs" />
-              {/* address */}
-              </div>
-              <Input aria-label="Address" placeholder="Address" type="text" className="h-9 text-xs" />
-              {/* message text area */}
-              <textarea aria-label="Message" placeholder="Message" className="h-20 resize-none rounded-md border border-input bg-[#F0F0F0] p-2 text-xs text-muted-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring/40" />
-              <Button type="submit" className="col-span-2 h-10 rounded-full bg-[#ff5b2a] text-xs font-bold text-white hover:bg-[#e94c22]">Get free quote</Button>
-            </form>
-          </CardContent>
-        </Card>
+        <form action="#top" className="rise rounded-2xl bg-white p-5 text-ink shadow-2xl [animation-delay:.35s] sm:p-6">
+          <h2 className="font-heading text-xl font-bold leading-tight">Get your free roofing quote</h2>
+          <p className="mt-1 text-sm text-muted-foreground">We reply within one working day.</p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <Input aria-label="Full name" name="name" placeholder="Full name" autoComplete="name" className={`${field} sm:col-span-2`} />
+            <Input aria-label="Email" name="email" type="email" placeholder="Email" autoComplete="email" className={field} />
+            <Input aria-label="Phone" name="phone" type="tel" placeholder="Phone" autoComplete="tel" className={field} />
+            <select aria-label="Service" name="service" defaultValue="" className={`${field} border px-3 text-muted-foreground sm:col-span-2`}>
+              <option value="" disabled>What do you need?</option>
+              <option>Roof repair</option>
+              <option>Roof replacement</option>
+              <option>New roof installation</option>
+              <option>Inspection</option>
+            </select>
+            <Input aria-label="Address" name="address" placeholder="Address or area" autoComplete="street-address" className={`${field} sm:col-span-2`} />
+            <textarea aria-label="Message" name="message" placeholder="Tell us about the problem (optional)" className="h-24 resize-none rounded-lg border border-input bg-white p-3 text-sm sm:col-span-2" />
+            <Button type="submit" className="h-12 rounded-full bg-signal text-sm font-bold text-white hover:bg-signal/90 sm:col-span-2">Send my quote request</Button>
+          </div>
+        </form>
       </div>
     </section>
   )

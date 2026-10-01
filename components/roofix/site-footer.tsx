@@ -1,35 +1,24 @@
 import { ActionButton } from './action-button'
 
-const footerLinks = [
-  ['Why Roofix', '#why'],
-  ['Services', '#services'],
-  ['Projects', '#projects'],
-  ['Reviews', '#reviews'],
-  ['Back to top', '#top'],
-  ['Contact', '#top'],
-] as const
+const links = [['About', '#about'], ['Services', '#services'], ['Projects', '#projects'], ['Why Roofix', '#why'], ['Reviews', '#reviews'], ['Back to top', '#top']] as const
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#293247] px-5 py-20 text-white lg:px-10">
+    <footer data-reveal className="bg-ink px-5 py-20 text-white lg:px-10">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Let&apos;s Build Your<span className="text-[#ff5b2a]"> Perfect</span> Fence</h2>
-          <div>
-            <p className="text-sm leading-6 text-white/60">Booking your appointment is quick and easy — choose your preferred time, and we’ll take care of the rest.</p>
-            <div className="mt-5"><ActionButton animated>Contact us</ActionButton></div>
+          <h2 className="max-w-2xl font-heading text-4xl font-bold leading-tight tracking-tight sm:text-5xl">Fix your roof before the next storm.</h2>
+          <div className="max-w-sm">
+            <p className="text-base leading-7 text-white/70">Pick a time that suits you and we&apos;ll confirm within one working day.</p>
+            <div className="mt-5"><ActionButton animated>Book a free inspection</ActionButton></div>
           </div>
         </div>
         <div className="mt-20 border-t border-white/15 pt-8">
-          <p aria-label="Roofix" className="footer-wordmark -mx-2 overflow-hidden text-center font-sans text-7xl font-semibold leading-[.72] tracking-[-0.04em] text-white/90 sm:text-9xl lg:text-[14rem] 2xl:text-[20rem]">
-            Roofix
-          </p>
-          <div className="mt-8 flex flex-col justify-between gap-6 md:flex-row md:items-center">
-            <nav aria-label="Footer" className="grid grid-cols-2 gap-x-12 gap-y-3 text-xs text-white/55 sm:grid-cols-3">
-              {footerLinks.map(([label, href]) => <a key={label} href={href} className="transition-colors hover:text-white">{label}</a>)}
-            </nav>
-          </div>
-          <p className="mt-12 text-xs text-white/40">© 2026 Roofix. Built with care for better homes.</p>
+          <p aria-hidden="true" className="footer-wordmark overflow-hidden text-center font-heading text-8xl font-bold leading-[.75] tracking-[-0.05em] text-white/90 sm:text-[12rem] lg:text-[16rem]">Roofix</p>
+          <nav aria-label="Footer" className="mt-8 grid grid-cols-2 gap-x-12 gap-y-3 text-sm text-white/70 sm:grid-cols-3 md:w-fit">
+            {links.map(([label, href]) => <a key={label} href={href} className="transition-colors hover:text-white">{label}</a>)}
+          </nav>
+          <p className="mt-10 text-sm text-white/60">© 2026 Roofix. Built with care for better homes.</p>
         </div>
       </div>
     </footer>
