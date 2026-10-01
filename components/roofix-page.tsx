@@ -21,9 +21,7 @@ export default function RoofixPage() {
       <ReviewsSection />
       <JournalSection />
       <LocationsSection />
-      <CompletionSections />
       <SiteFooter />
-      <FloatingQuote />
     </main>
   )
 }
