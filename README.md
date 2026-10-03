@@ -31,6 +31,16 @@ pnpm typecheck
 pnpm build
 ```
 
+## Quote Requests
+
+Quote form submissions are validated on the server and stored in the Supabase `quote_requests` table. To enable storage:
+
+1. Apply the SQL migrations in `supabase/migrations` to your Supabase project, in filename order.
+2. Copy `.env.example` to `.env.local` and set `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`.
+3. Restart the development server.
+
+The service role key is server-only and bypasses row-level security; never prefix it with `NEXT_PUBLIC_` or expose it to the browser. Email notifications are optional, development-only, and skipped unless `LOCAL_QUOTE_NOTIFY_EMAIL`, `RESEND_API_KEY`, and `RESEND_FROM_EMAIL` are all set.
+
 ## Lighthouse
 
 | Audit | Score |
@@ -44,6 +54,7 @@ No Lighthouse scores are claimed until the production build is audited in a brow
 
 ## Next Improvements
 
-- Connect the quote form to a validated submission endpoint and add success/error feedback.
+- Add rate limiting or a CAPTCHA before accepting public production submissions.
+- Build a private lead inbox if staff need to manage quote request statuses.
 - Serve project photography locally in responsive formats and recheck Core Web Vitals.
 - Run mobile and desktop Lighthouse audits, then address the measured bottlenecks before publishing scores.
